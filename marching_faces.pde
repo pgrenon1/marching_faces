@@ -1,9 +1,3 @@
-// Marching Squares
-// Coding in the Cabana
-// The Coding Train / Daniel Shiffman
-// https://thecodingtrain.com/challenges/coding-in-the-cabana/005-marching-squares.html
-// https://youtu.be/0ZONMNUKTfU
-// p5 port: https://editor.p5js.org/codingtrain/sketches/g6-zufS8c
 import processing.video.*;
 
 Capture cap;
@@ -23,17 +17,17 @@ void mousePressed() {
 
 void setup() {
   
-  size(480, 360);
-  img = loadImage("thomas.jpg");
+  size(1280, 720);
+  //img = loadImage("thomas.jpg");
   //img.filter(POSTERIZE, 4);
-  img.resize(width, height);
+  //img.resize(width, height);
   //pixelDensity(2);
   noise = new OpenSimplexNoise();
   cols = 1 + width / rez;
   rows = 1 + height / rez;
   field = new float[cols][rows];
 
-  cap = new Capture(this, 960, 720, 32);
+  cap = new Capture(this, 1280, 720, 30);
   cap.start();
 }
 
@@ -49,7 +43,7 @@ void draw() {
   // background(0);
   // image(cap, 0,0,width, height);
   PImage img = cap.get();
-  img.resize(480, 360);
+  img.resize(1280, 720);
 
   textSize(18); text("FRAMERATE: " + int(frameRate), 50, 50);
   background(0); 
